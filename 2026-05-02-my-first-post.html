@@ -1,0 +1,49 @@
+// 面向对象：质数工具类
+class PrimeFinder {
+    private int maxNum;
+
+    // 构造方法：设置范围最大值
+    public PrimeFinder(int maxNum) {
+        this.maxNum = maxNum;
+    }
+
+    // 核心：埃氏筛排除法找质数
+    public void showPrime() {
+        // 标记数组：true代表是质数，false不是
+        boolean[] isPrime = new boolean[maxNum + 1];
+
+        // 初始先默认所有数都是质数
+        for (int i = 2; i <= maxNum; i++) {
+            isPrime[i] = true;
+        }
+
+        // 排除法：把合数标记为false
+        for (int i = 2; i * i <= maxNum; i++) {
+            if (isPrime[i]) {
+                // i的倍数全部排除（不是质数）
+                for (int j = i * i; j <= maxNum; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        // 输出所有质数
+        System.out.println("100以内的质数：");
+        for (int i = 2; i <= maxNum; i++) {
+            if (isPrime[i]) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+// 测试主类
+public class PrimeTest {
+    public static void main(String[] args) {
+        // 创建对象，限定范围100
+        PrimeFinder pf = new PrimeFinder(100);
+        // 调用方法找质数
+        pf.showPrime();
+    }
+}
+          
