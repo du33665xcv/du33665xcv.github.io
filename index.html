@@ -5,26 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人博客</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
-        h1 {
+        body {
+            background-color: #f5f7fa;
             color: #333;
+            line-height: 1.6;
+        }
+        /* 导航栏 */
+        nav {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        /* 头部信息 */
+        .header {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 5%;
             text-align: center;
         }
-        p {
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #3498db;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
             color: #666;
-            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        /* 文章列表 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 0 5%;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        .post-card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .post-card:hover {
+            transform: translateY(-3px);
+        }
+        .post-title {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .post-title:hover {
+            color: #3498db;
+        }
+        .post-meta {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .post-excerpt {
+            color: #666;
+        }
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <h1>欢迎来到我的博客 🎉</h1>
-    <p>这是我用 GitHub Pages 搭建的第一个个人博客！</p>
-    <p>后续我会在这里分享学习笔记和日常记录~</p>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">我的博客</div>
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#posts">文章</a>
+            <a href="#about">关于我</a>
+        </div>
+    </nav>
+
+    <!-- 头部信息 -->
+    <div class="header" id="home">
+        <div class="avatar">你</div>
+        <h1>你好，我是 du33665xcv 👋</h1>
+        <p>软件专业学生 | 正在学习前端与后端开发</p>
+    </div>
+
+    <!-- 文章列表 -->
+    <div class="container" id="posts">
+        <h2 class="section-title">📝 最近文章</h2>
+        
+        <div class="post-card">
+            <a href="#" class="post-title">我的第一个 GitHub Pages 博客搭建记录</a>
+            <div class="post-meta">发布于 2026-05-02 · 阅读 999</div>
+            <p class="post-excerpt">从零开始搭建 GitHub Pages 个人博客，记录踩坑全过程，包括仓库创建、Actions 配置和静态页面部署...</p>
+        </div>
+
+        <div class="post-card">
+            <a href="#" class="post-title">HTML 基础入门：从零写一个简单页面</a>
+            <div class="post-meta">发布于 2026-05-03 · 阅读 999</div>
+            <p class="post-excerpt">介绍 HTML 的基本结构和常用标签，通过实战案例学习如何构建一个美观的静态网页...</p>
+        </div>
+    </div>
+
+    <!-- 关于我 -->
+    <div class="container" id="about">
+        <h2 class="section-title">👤 关于我</h2>
+        <p>大家好！我是一名软件专业的学生，正在学习前端、后端和数据库开发。</p>
+        <br>
+        <p>这个博客是我的线上学习记录，我会在这里分享学习笔记、项目心得和日常记录，欢迎一起交流学习！</p>
+        <br>
+        <p>📧 联系邮箱：2376373655@qq.com</p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        © 2026 我的个人博客 | Powered by GitHub Pages
+    </footer>
 </body>
 </html>
